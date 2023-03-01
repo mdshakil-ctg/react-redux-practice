@@ -1,11 +1,11 @@
+import { RouterProvider } from 'react-router-dom';
 import './App.css';
+import { router } from './Routes/Routes';
 
-function App() {
+function App({children}) {
   return (
     <div className="App">
-        <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+       <RouterProvider router={router}>{children}</RouterProvider>
     </div>
   );
 }
