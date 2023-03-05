@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import { addToCart } from '../Redux/actionCreators/productActions';
 import { ADD_TO_CART } from '../Redux/actionTypes/actionTypes';
 
 const ProductCard = ({product}) => {
@@ -7,7 +8,7 @@ const ProductCard = ({product}) => {
    const dispatch = useDispatch();
 
    return (
-      <div className="card w-96 bg-base-100 shadow-xl">
+      <div className="card bg-base-100 shadow-xl">
   <figure><img src={image} alt="Shoes" /></figure>
   <div className="card-body">
     <h2 className="card-title">
@@ -19,7 +20,7 @@ const ProductCard = ({product}) => {
     <p>If a dog chews shoes whose shoes does he choose?</p>
     <div className="card-actions justify-end">
       <button
-      onClick={()=> dispatch({type: ADD_TO_CART, payload: product})}
+      onClick={()=> dispatch(addToCart(product))}
       className="btn btn-warning">Add To Cart</button> 
       <div className="btn btn-warning btn-outline">+</div>
     </div>
