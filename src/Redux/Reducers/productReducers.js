@@ -1,7 +1,9 @@
-const initialState = {};
+const initialState = {
+   Test: "testing redux connection"
+};
 
 const productReducers = (state = initialState, action) =>{
-   return;
+   return state;
 }
 
 export default productReducers;

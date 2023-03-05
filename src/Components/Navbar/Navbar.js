@@ -14,7 +14,7 @@ const Navbar = () => {
         <li><a href='#'>About</a></li>
       </ul>
     </div>
-    <a href='#' className="btn btn-ghost normal-case text-xl">daisyUI</a>
+    <a href='#' className="btn btn-ghost normal-case text-xl">Redux Practice</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '../../Components/Navbar/Navbar';
 import ProductCard from '../../Components/ProductCard';
-
+import {useSelector} from "react-redux"
 const Home = () => {
    const [products, setProducts] = useState([]);
    useEffect(()=>{
@@ -9,7 +9,9 @@ const Home = () => {
       .then(res => res.json())
       .then(data => setProducts(data))
    },[])
-   console.log(products)
+   
+   const state = useSelector((state) => state)
+   console.log(state);
    return (
       <div>
          <Navbar/>
