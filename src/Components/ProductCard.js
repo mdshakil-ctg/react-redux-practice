@@ -1,10 +1,12 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { addToCart } from '../Redux/actionCreators/productActions';
+import { useLocation } from 'react-router-dom';
+import { addToCart, removeFromCart } from '../Redux/actionCreators/productActions';
 
 const ProductCard = ({product}) => {
    const {image, model} = product;
    const dispatch = useDispatch();
+   const {pathname} = useLocation();
 
    return (
       <div className="card bg-base-100 shadow-xl">
@@ -18,10 +20,18 @@ const ProductCard = ({product}) => {
     }
     <p>If a dog chews shoes whose shoes does he choose?</p>
     <div className="card-actions justify-end">
-      <button
+      {
+        !pathname.includes('cart') &&
+        <button
       onClick={()=> dispatch(addToCart(product))}
       className="btn btn-warning">Add To Cart</button> 
-      <div className="btn btn-warning btn-outline">+</div>
+      }
+    { !pathname.includes('cart') &&<div className="btn btn-warning btn-outline">+</div>}
+      {
+        pathname.includes('cart') &&
+        <button
+      onClick={()=> dispatch(removeFromCart(product))}
+      className="btn btn-warning" >Remove From Cart</button> }
     </div>
   </div>
 </div>

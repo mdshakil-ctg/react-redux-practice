@@ -1,9 +1,21 @@
 import React from 'react';
+import {useSelector} from 'react-redux'
+import { useLocation } from 'react-router-dom';
+import ProductCard from '../../Components/ProductCard';
 
 const Cart = () => {
+
+   const cart = useSelector(state => state.cart);
+   const {pathname} = useLocation();
+
    return (
       <div>
-         this is cart section
+         <h1>This is cart section</h1>
+         <div className='grid grid-cols-2 gap-5'>
+            {
+               cart.map(product => <ProductCard key={product._id} product={product}></ProductCard>)
+            }
+         </div>
       </div>
    );
 };
