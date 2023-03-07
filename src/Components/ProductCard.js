@@ -1,7 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../Redux/actionCreators/productActions';
-import { ADD_TO_CART } from '../Redux/actionTypes/actionTypes';
 
 const ProductCard = ({product}) => {
    const {image, model} = product;

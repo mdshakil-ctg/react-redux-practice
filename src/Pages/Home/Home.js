@@ -14,7 +14,6 @@ const Home = () => {
    console.log(state);
    return (
       <div>
-         <Navbar/>
         <div className='grid grid-cols-3 gap-5'>
         {
             products.map(product => <ProductCard key={product._id}
