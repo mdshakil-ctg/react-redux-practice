@@ -1,5 +1,4 @@
 import React from 'react';
-import { FaBeer } from 'react-icons/fa';
 import { FaCartPlus } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
@@ -15,6 +14,7 @@ const Navbar = () => {
         <li><Link to='/'>Home</Link></li>
         <li><a href='/top-rated'>Top Rated</a></li>
         <li><Link to='about'>About</Link></li>
+      <li><Link to='/cart'><FaCartPlus className='cart'/></Link></li>
       </ul>
     </div>
     <a href='/' className="btn btn-ghost normal-case text-xl">Redux Practice</a>

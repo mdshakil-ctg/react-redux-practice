@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Navbar from '../../Components/Navbar/Navbar';
 import ProductCard from '../../Components/ProductCard';
 import {useSelector} from "react-redux"
 const Home = () => {
@@ -10,11 +9,9 @@ const Home = () => {
       .then(data => setProducts(data))
    },[])
    
-   const state = useSelector((state) => state)
-   console.log(state);
    return (
-      <div>
-        <div className='grid grid-cols-3 gap-5'>
+      <div className='p-12'>
+        <div className='grid grid-cols-2 gap-10'>
         {
             products.map(product => <ProductCard key={product._id}
             product={product}

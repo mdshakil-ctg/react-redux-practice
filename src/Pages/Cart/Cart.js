@@ -13,7 +13,7 @@ const Cart = () => {
          <h1>This is cart section</h1>
          <div className='grid grid-cols-2 gap-5'>
             {
-               cart.map(product => <ProductCard key={product._id} product={product}></ProductCard>)
+               cart.sort((a,b) => a._id - b._id).map(product => <ProductCard key={product._id} product={product}></ProductCard>)
             }
          </div>
       </div>

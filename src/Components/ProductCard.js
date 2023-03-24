@@ -10,6 +10,7 @@ const ProductCard = ({product}) => {
 
    return (
       <div className="card bg-base-100 shadow-xl">
+        <div>{product.quantity}</div>
   <figure><img src={image} alt="Shoes" /></figure>
   <div className="card-body">
     <h2 className="card-title">
